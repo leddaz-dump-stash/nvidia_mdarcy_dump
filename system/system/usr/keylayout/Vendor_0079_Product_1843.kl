@@ -1,0 +1,81 @@
+# Copyright (C) 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Mayflash Gamecube to WiiU 4 port adapter
+#
+# Each port comes in as a single ID so no multi-controller is possible.
+# Tons of axes are reported.
+# Triggers are inaccurate so needed a 20% flat for them (51 out of 255).
+#
+# Port 1: No axes work for some reason.
+# Port 2: Fully works.
+# Port 3: Doesn't work.
+# Port 4: Doesn't work.
+
+### Port 1
+key 289   BUTTON_A
+key 290   BUTTON_B
+key 292   BUTTON_C
+key 288   BUTTON_X
+key 291   BUTTON_Y
+key 293   BUTTON_Z
+
+key 295   BUTTON_R1
+
+key 297   BACK
+
+# We don't allow DPAD and AXIS_HAT together.
+# key 300   DPAD_UP
+# key 302   DPAD_DOWN
+# key 303   DPAD_LEFT
+# key 301   DPAD_RIGHT
+
+# These are the axes but not working.
+#axis 0x00 X
+#axis 0x01 Y
+#axis 0x02 RZ
+#axis 0x05 Z
+#axis 0x03 LTRIGGER flat 51
+#axis 0x04 RTRIGGER flat 51
+
+#axis 0x10 HAT_X
+#axis 0x11 HAT_Y
+
+### Port 2
+key 305   BUTTON_A
+key 306   BUTTON_B
+key 308   BUTTON_C
+key 304   BUTTON_X
+key 307   BUTTON_Y
+key 309   BUTTON_Z
+
+key 311   BUTTON_R1
+
+key 313   BACK
+
+# We don't allow DPAD and AXIS_HAT together.
+# key 316   DPAD_UP
+# key 318   DPAD_DOWN
+# key 319   DPAD_LEFT
+# key 317   DPAD_RIGHT
+
+axis 0x06 X
+axis 0x07 Y
+axis 0x08 RZ
+axis 0x09 Z
+axis 0x0a LTRIGGER flat 51
+axis 0x0b RTRIGGER flat 51
+
+axis 0x12 HAT_X
+axis 0x13 HAT_Y

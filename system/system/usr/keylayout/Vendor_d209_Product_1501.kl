@@ -1,0 +1,66 @@
+# Copyright (C) 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# UHID profile using 1.38 FW
+
+# Key mapping mimics what's currently in the FW
+# It also adds actual Android outputs to codes 319, 704 - 719.
+# Normally they are KEYCODE_UNKNOWN.
+key 304 BUTTON_A
+key 305 BUTTON_B
+key 306 BUTTON_C
+key 307 BUTTON_X
+key 308 BUTTON_Y
+key 309 BUTTON_Z
+key 310 BUTTON_L1
+key 311 BUTTON_R1
+key 312 BUTTON_L2
+key 313 BUTTON_R2
+key 314 BUTTON_SELECT
+key 315 BUTTON_START
+key 316 BUTTON_MODE
+key 317 BUTTON_THUMBL
+key 318 BUTTON_THUMBR
+key 319 BACK
+key 704 HOME
+key 705 DPAD_UP
+key 706 DPAD_DOWN
+key 707 DPAD_LEFT
+key 708 DPAD_RIGHT
+key 709 DPAD_CENTER
+key 710 SEARCH
+key 711 MEDIA_REWIND
+key 712 MEDIA_FAST_FORWARD
+key 713 MEDIA_PREVIOUS
+key 714 MEDIA_NEXT
+key 715 MEDIA_PLAY_PAUSE
+key 716 POWER
+key 717 VOLUME_MUTE
+key 718 VOLUME_DOWN
+key 719 VOLUME_UP
+
+# RUDDER and WHEEL are changed to RX and RY.
+# Without this .kl file they will revert RUDDER and WHEEL.
+axis 0x00 X
+axis 0x01 Y
+axis 0x02 Z
+axis 0x05 RZ
+# NATIVE axis 0x07 RUDDER
+# NATIVE axis 0x08 WHEEL
+axis 0x07 RX
+axis 0x08 RY
+axis 0x09 LTRIGGER
+axis 0x0a RTRIGGER
+axis 0x10 HAT_X
+axis 0x11 HAT_Y

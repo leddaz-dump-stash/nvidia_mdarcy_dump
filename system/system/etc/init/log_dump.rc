@@ -1,0 +1,16 @@
+# Copyright (c) 2018-2019, NVIDIA CORPORATION.  All rights reserved.
+#
+# NVIDIA Corporation and its licensors retain all intellectual property and
+# proprietary rights in and to this software and related documentation.  Any
+# use, reproduction, disclosure or distribution of this software and related
+# documentation without an express license agreement from NVIDIA Corporation
+# is strictly prohibited.
+
+service cac_log_dumper /system/bin/cac_log_dumper
+    class late_start
+    user system
+    group system
+    oneshot
+
+on post-fs-data
+    mkdir /cache/logs 0770 system cache

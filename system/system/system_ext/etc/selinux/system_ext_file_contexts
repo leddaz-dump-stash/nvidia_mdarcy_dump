@@ -1,0 +1,9 @@
+/data/misc/samba(/.*)?                  u:object_r:samba_data_file:s0
+/data/misc/smartthings(/.*)?		u:object_r:hubcore_data_file:s0
+/system/bin/smbd                        u:object_r:samba_exec:s0
+/system/bin/nmbd                        u:object_r:samba_exec:s0
+/system/bin/toolC               u:object_r:toolc_exec:s0
+/system/bin/hubcore			u:object_r:hubcore_exec:s0
+/system/bin/smartctl            u:object_r:smartctl_exec:s0
+/system/bin/smbrmlog                    u:object_r:samba_exec:s0
+/system/bin/smbpasswd                   u:object_r:samba_exec:s0

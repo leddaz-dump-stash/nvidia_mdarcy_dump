@@ -1,0 +1,7 @@
+service storaged /system/bin/storaged
+    class main
+    capabilities DAC_READ_SEARCH
+    priority 10
+    writepid /dev/cpuset/system-background/tasks
+    user root
+    group package_info

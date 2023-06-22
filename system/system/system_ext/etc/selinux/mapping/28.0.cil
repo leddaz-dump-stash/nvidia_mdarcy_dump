@@ -1,0 +1,8 @@
+(typeattribute hubcore_28_0)
+(typeattribute hubcore_29_0)
+(typeattribute nvcpl_app_28_0)
+(typeattribute nvcpl_app_29_0)
+(expandtypeattribute (hubcore_28_0) true)
+(expandtypeattribute (nvcpl_app_28_0) true)
+(typeattributeset hubcore_28_0 (hubcore))
+(typeattributeset nvcpl_app_28_0 (nvcpl_app))

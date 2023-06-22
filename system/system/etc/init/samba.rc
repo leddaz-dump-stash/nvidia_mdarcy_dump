@@ -1,0 +1,52 @@
+# Copyright (c) 2014-2018, NVIDIA CORPORATION.  All rights reserved.
+#
+#NVIDIA Corporation and its licensors retain all intellectual property and
+#proprietary rights in and to this software and related documentation.  Any
+#use, reproduction, disclosure or distribution of this software and related
+#documentation without an express license agreement from NVIDIA Corporation
+#is strictly prohibited.
+
+# samba server setup
+on post-fs-data
+    mkdir /data/misc/samba 0775 nv_samba root
+    mkdir /data/misc/samba/var 0775 nv_samba root
+    mkdir /data/misc/samba/var/cache 0750 nv_samba root
+    mkdir /data/misc/samba/var/cores 0700 nv_samba root
+    mkdir /data/misc/samba/var/lock 0775 nv_samba root
+    mkdir /data/misc/samba/var/lock/msg.lock 0775 nv_samba root
+    mkdir /data/misc/samba/var/locks 0775 nv_samba root
+    mkdir /data/misc/samba/var/log 0775 nv_samba root
+    mkdir /data/misc/samba/var/run 0770 nv_samba root
+    mkdir /data/misc/samba/private 0770 nv_samba root
+    mkdir /data/misc/samba/private/msg.sock 0770 nv_samba root
+    mkdir /data/misc/samba/share 0770 nv_samba root
+    mkdir /data/misc/samba/tmp 0777 nv_samba root
+    mkdir /data/misc/samba/etc 0775 nv_samba root
+    write /data/misc/samba/etc/smb.conf "# SMBv3"
+    write /data/misc/samba/etc/usermap.txt 0
+    write /data/misc/samba/etc/smbnotify 0
+    chmod 774 /data/misc/samba/etc/usermap.txt
+    chmod 774 /data/misc/samba/etc/smb.conf
+    chmod 774 /data/misc/samba/etc/smbnotify
+    chown root nv_samba /data/misc/samba/etc/usermap.txt
+    chown root nv_samba /data/misc/samba/etc/smb.conf
+    chown root nv_samba /data/misc/samba/etc/smbnotify
+
+service samba /system/bin/smbd -DF --no-process-group
+    # class late_start
+    disabled
+    user nv_samba
+    group nv_samba sdcard_rw media_rw shell everybody external_storage
+    capabilities NET_ADMIN NET_RAW NET_BIND_SERVICE SYS_RESOURCE SETUID SETGID
+    seclabel u:r:samba:s0
+
+service nmbd /system/bin/nmbd -DF --no-process-group
+    disabled
+    user nv_samba
+    group nv_samba sdcard_rw media_rw shell everybody external_storage
+    capabilities NET_ADMIN NET_RAW NET_BIND_SERVICE SYS_RESOURCE SETUID SETGID
+    seclabel u:r:samba:s0
+
+on property:persist.smb.enabled=1
+    start samba
+    start nmbd
