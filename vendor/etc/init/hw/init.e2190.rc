@@ -1,0 +1,20 @@
+#Copyright (c) 2014-2019, NVIDIA CORPORATION.  All rights reserved.
+#
+#NVIDIA Corporation and its licensors retain all intellectual property and
+#proprietary rights in and to this software and related documentation.  Any
+#use, reproduction, disclosure or distribution of this software and related
+#documentation without an express license agreement from NVIDIA Corporation
+#is strictly prohibited.
+
+import /vendor/etc/init/hw/init.tegra_emmc.rc
+import /vendor/etc/init/hw/init.t210.rc
+import /vendor/etc/init/hw/init.ray_touch.rc
+
+on fs
+    mount_all /vendor/etc/fstab.e2190
+
+on property:persist.vendor.gps.present=true
+    symlink /vendor/etc/android.hardware.location.gps.xml /data/vendor/android.hardware.location.gps.xml
+
+on property:persist.vendor.gps.present=false
+    rm /data/vendor/android.hardware.location.gps.xml

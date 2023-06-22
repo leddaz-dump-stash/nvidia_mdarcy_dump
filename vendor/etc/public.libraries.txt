@@ -1,0 +1,8 @@
+libtsec_wrapper.so
+libnvsi_ll_2.so
+libnvos.so
+libnvgr.so
+nvtranscode.so
+libnvcpl_vendor.so
+libndkbinderutil.so
+

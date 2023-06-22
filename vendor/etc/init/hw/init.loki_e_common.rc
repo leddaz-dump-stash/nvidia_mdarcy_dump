@@ -1,0 +1,45 @@
+#Copyright (c) 2014-2018, NVIDIA CORPORATION.  All rights reserved.
+#
+#NVIDIA Corporation and its licensors retain all intellectual property and
+#proprietary rights in and to this software and related documentation.  Any
+#use, reproduction, disclosure or distribution of this software and related
+#documentation without an express license agreement from NVIDIA Corporation
+#is strictly prohibited.
+
+import /vendor/etc/init/hw/init.loki_foster_e_common.rc
+
+on init
+    # Load persistent dm-verity state
+#WAR for R build up. Tracking in AFWORK-832
+    # verity_load_state
+
+on fs
+    # factory reset protection
+    mkdir /persistent 0660 system system
+    setprop ro.frp.pst /dev/block/platform/sdhci-tegra.3/by-name/RP2
+
+    # Update dm-verity state and set partition.*.verified properties
+    verity_update_state
+
+on boot
+    # INA3221 configurations
+    ## Set averaging mode to use 64 samples
+    exec /vendor/bin/config_hwmon.sh ina3221 samples 64 VDD_BATT
+    ## Set update interval to 54ms = 2 * 140us convertion time * 3 channels * 64
+    exec /vendor/bin/config_hwmon.sh ina3221 update_interval 54 VDD_BATT
+    ## Set channel0 current-critical-limit-ma to 6800
+    exec /vendor/bin/config_hwmon.sh ina3221 curr1_crit 6800 VDD_BATT
+
+service charger /charger
+    class charger
+    seclabel u:r:healthd:s0
+    group input
+
+on charger
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/APP /system wait ro
+    setprop persist.sys.usb.config mtp
+    write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/enable 1
+    write /sys/devices/system/cpu/cpuquiet/current_governor runnable
+    write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/no_lp -1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor powersave

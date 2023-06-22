@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved.
+
+ NVIDIA CORPORATION and its licensors retain all intellectual property
+ and proprietary rights in and to this software, related documentation
+ and any modifications thereto.  Any use, reproduction, disclosure or
+ distribution of this software and related documentation without an express
+ license agreement from NVIDIA CORPORATION is strictly prohibited.
+-->
+
+<!-- This file is used to grant dangerous permissions (sdk 23+) to system
+     app. PackageManagerService reads files in /vendor/etc/permissions folder
+     and grant permission based on file contents.
+
+     Each package can asked for multiple permission or permission group.
+     Available permission group as below
+        <> android.permission-group.calendar
+        <> android.permission-group.camera
+        <> android.permission-group.contacts
+        <> android.permission-group.location
+        <> android.permission-group.microphone
+        <> android.permission-group.phone
+        <> android.permission-group.sensors
+        <> android.permission-group.sms
+        <> android.permission-group.storage
+-->
+
+<permissions>
+    <permission name="android.permission-group.microphone"></permission>
+    <permission name="android.permission-group.storage"></permission>
+    <permission name="android.permission-group.camera"></permission>
+</permissions>
+
