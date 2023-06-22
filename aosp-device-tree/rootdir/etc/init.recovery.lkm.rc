@@ -1,0 +1,23 @@
+# Copyright (c) 2019 NVIDIA Corporation.  All Rights Reserved.
+#
+# NVIDIA Corporation and its licensors retain all intellectual property and
+# proprietary rights in and to this software and related documentation.  Any
+# use, reproduction, disclosure or distribution of this software and related
+# documentation without an express license agreement from NVIDIA Corporation
+# is strictly prohibited.
+
+#
+# Loadable Kernel Modules (LKM) for Recovery Boot
+# Add *.ko to the appropriate action trigger/s and the
+# BOARD_RECOVERY_KERNEL_MODULES build var in BoardConfig.mk.
+#
+
+on boot
+    # Insert the modules required in recovery boot
+    insmod /lib/modules/hid-nvidia-blake.ko
+    insmod /lib/modules/hid-jarvis-remote.ko
+    insmod /lib/modules/usb-storage.ko
+    insmod /lib/modules/pwm_fan.ko
+    insmod /lib/modules/therm_fan_est.ko
+    # Selinux contexts for sysfs after the modules are loaded
+    restorecon_recursive /sys

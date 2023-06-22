@@ -1,0 +1,11 @@
+atvremote.bleaudio_connectgatt_delay_ms=2500
+net.bt.name=Android
+persist.sys.NV_ECO.IF.CHARGING=false
+ro.af.client_heap_size_kbyte=10240
+ro.build.description=mdarcy-user 11 RQ1A.210105.003 7094531_2914.3416 release-keys
+ro.build.display.id=RQ1A.210105.003.7094531_2914.3416
+ro.build.product=foster
+ro.com.google.clientidbase=android-nvidia
+ro.input.noresample=1
+ro.kernel.ebpf.supported=true
+ro.wifi.channels=

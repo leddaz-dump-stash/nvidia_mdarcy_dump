@@ -1,0 +1,323 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init scripts
+sh_binary {
+    name: "adbenable.sh",
+    src: "bin/adbenable.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "badblk.sh",
+    src: "bin/badblk.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "bt_loader.sh",
+    src: "bin/bt_loader.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "config_hwmon.sh",
+    src: "bin/config_hwmon.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "cyupdate.sh",
+    src: "bin/cyupdate.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "cyupdate_config.sh",
+    src: "bin/cyupdate_config.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "geupdate.sh",
+    src: "bin/geupdate.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "install-recovery.sh",
+    src: "bin/install-recovery.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "lkm_loader.sh",
+    src: "bin/lkm_loader.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "nvphsd_setup.sh",
+    src: "bin/nvphsd_setup.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "run_ss_status.sh",
+    src: "bin/run_ss_status.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "supplicant_log_monitor.sh",
+    src: "bin/supplicant_log_monitor.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "wifi_loader.sh",
+    src: "bin/wifi_loader.sh",
+    vendor: true,
+}
+
+// Init configuration files
+prebuilt_etc {
+    name: "init.abca.rc",
+    src: "etc/init.abca.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.abcb.rc",
+    src: "etc/init.abcb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.comms.rc",
+    src: "etc/init.comms.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.darcy.rc",
+    src: "etc/init.darcy.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.e2190.rc",
+    src: "etc/init.e2190.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.e2220.rc",
+    src: "etc/init.e2220.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.e3350.rc",
+    src: "etc/init.e3350.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.foster_e.rc",
+    src: "etc/init.foster_e.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.foster_e_common.rc",
+    src: "etc/init.foster_e_common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.foster_e_hdd.rc",
+    src: "etc/init.foster_e_hdd.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.hdcp.rc",
+    src: "etc/init.hdcp.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.lkm.rc",
+    src: "etc/init.lkm.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.loki_e_base.rc",
+    src: "etc/init.loki_e_base.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.loki_e_common.rc",
+    src: "etc/init.loki_e_common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.loki_e_lte.rc",
+    src: "etc/init.loki_e_lte.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.loki_e_wifi.rc",
+    src: "etc/init.loki_e_wifi.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.loki_foster_e_common.rc",
+    src: "etc/init.loki_foster_e_common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.none.rc",
+    src: "etc/init.none.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.nv_dev_board.usb.rc",
+    src: "etc/init.nv_dev_board.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.nvphsd_setup.rc",
+    src: "etc/init.nvphsd_setup.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.ray_touch.rc",
+    src: "etc/init.ray_touch.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.sata.configs.rc",
+    src: "etc/init.sata.configs.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.sif.rc",
+    src: "etc/init.sif.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.t18x-interposer.rc",
+    src: "etc/init.t18x-interposer.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.t18x-interposer_common.rc",
+    src: "etc/init.t18x-interposer_common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.t210.rc",
+    src: "etc/init.t210.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.t210_common.rc",
+    src: "etc/init.t210_common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.tegra.rc",
+    src: "etc/init.tegra.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.tegra_emmc.rc",
+    src: "etc/init.tegra_emmc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.tegra_sata.rc",
+    src: "etc/init.tegra_sata.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.tlk.rc",
+    src: "etc/init.tlk.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.touch.0.rc",
+    src: "etc/init.touch.0.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.xusb.configfs.usb.rc",
+    src: "etc/init.xusb.configfs.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+// fstab
+prebuilt_etc {
+    name: "fstab.abca",
+    src: "etc/fstab.abca",
+    vendor: true,
+}

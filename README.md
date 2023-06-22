@@ -1,0 +1,14 @@
+# mdarcy-user 11 RQ1A.210105.003 7094531_2914.3416 release-keys
+- manufacturer: nvidia
+- platform: tegra
+- codename: mdarcy
+- flavor: mdarcy-user
+- release: 11
+- id: RQ1A.210105.003
+- incremental: 7094531_2914.3416
+- tags: release-keys
+- fingerprint: NVIDIA/mdarcy/mdarcy:11/RQ1A.210105.003/7094531_2914.3416:user/release-keys
+- is_ab: false
+- brand: NVIDIA
+- branch: mdarcy-user-11-RQ1A.210105.003-7094531_2914.3416-release-keys
+- repo: nvidia_mdarcy_dump
